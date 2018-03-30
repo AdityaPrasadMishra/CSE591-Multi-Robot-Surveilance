@@ -1,46 +1,7 @@
 # CSE591-Mutil-Robot-Surveilance
 
-### Building A
+This package has code for:
 
-+ Co-ordinates:
-```
-(-2.0251e+0, +1.7687e+0,+2.6000e-1),(-2.0251e+0,+2.1255e+0,+2.6000e-1),(-1.7651e+0,+2.1255e+0,+2.6000e-1),(-1.7651e+0, +1.7687e+0,+4.9000e-1)
-```
-+ Length & Breadth: `(0.3568, 0.26)`
-+ Perimeter: `1.2336`
++ VREP code for generating scenario with five building and three surveillance robots (quadcopter drones).
 
-### Building B
-
-+ Co-ordinates:
-```
-(+1.1778e+0, +1.5797e+0,+4.9000e-1),(+1.1778e+0, +2.3087e+0,+4.9000e-1),(+1.7198e+0, +2.3087e+0,+4.9000e-1),(+1.7198e+0, +1.5797e+0,+4.9000e-1)$$
-```
-+ Length & Breadth: `(0.729, 0.542)` 
-+ Perimeter: `2.542`
-
-### Building C
-
-Co-ordinates:
-```
-(+1.1778e+0, -2.0713e+0,+4.9000e-1),(+1.1778e+0, -1.3503e+0,+4.9000e-1),(+1.7198e+0, -1.3503e+0,+4.9000e-1),(+1.7198e+0, -2.0713e+0,+4.9000e-1)
-```
-+ Length & Breadth: `(0.721, 0.542)`
-+ Perimeter: `2.526`
-
-### Building D
-
-Co-ordinates:
-```
-(-2.0251e+0,-1.8813e+0,+2.6000e-1),(-2.0251e+0,-1.525e+0,+2.6000e-1),(-1.7651e+0,-1.525e+0,+2.6000e-1),(-1.7651e+0, -1.8813e+0,+4.9000e-1)
-```
-+ Length & Breadth: `(0.3568, 0.26)`
-+ Perimeter: `1.2336`
-
-### Building O
-
-Co-ordinates:
-```
-(+2.9062e-1,9.7000e-1,+1.0100e+0),(+2.9062e-1,-4.7000e-1,+1.0100e+0),(-8.1062e-1,-4.7000e-1,+1.0100e+0),(-8.1062e-1,9.7000e-1,+1.0100e+0),
-```
-+ Length & Breadth: `(1.44,1.10)`
-+ Perimeter: `5.08`
++ Generating Problem Instance files with building parameters (form VREP specification), utility values, and alpha parameters mentions in the report (yet to be publicly released).
