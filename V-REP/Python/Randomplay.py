@@ -13,7 +13,7 @@ import numpy as np
 import random
 import fiveBuildingsThreeDrones as fiver
 
-for i in range(2):
+for i in range(1):
     droneval = random.sample(range(5), 3)
     print(droneval)
     attackerval = random.sample(range(5), 1)

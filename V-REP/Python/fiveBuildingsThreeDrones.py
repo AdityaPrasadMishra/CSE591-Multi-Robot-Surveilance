@@ -51,7 +51,7 @@ def attackerGame(clientID,robotHandle):
     
 
 def traversePath(clientID,path,robotHandle,signalname,signalval):
-    ret = vrep.simxSetStringSignal(clientID,signalname,'change',vrepConst.simx_opmode_oneshot)
+    #ret = vrep.simxSetStringSignal(clientID,signalname,'change',vrepConst.simx_opmode_oneshot)
     #ret = True
     startTime=time.time()
     while time.time()-startTime < 4:   
@@ -65,7 +65,10 @@ def traversePath(clientID,path,robotHandle,signalname,signalval):
             startTime=time.time()
             while time.time()-startTime < 6:   
                 x=True
-    ret = vrep.simxSetStringSignal(clientID,signalname,signalval,vrepConst.simx_opmode_oneshot)
+    print(signalname)
+    print(signalval)
+    ret = vrep.simxSetStringSignal(clientID,signalname,signalval,vrepConst.simx_opmode_oneshot_wait)
+    print(ret)
     return ret
 
 def vrepEpisodes(no, droneval, attackerval):
@@ -96,12 +99,12 @@ def vrepEpisodes(no, droneval, attackerval):
         QUAD_GOAL1 ='Quadricopter_goal1'
         QUAD_BODY1 = 'Quadricopter_target_1body'
 
-        ret,Quadricopter=vrep.simxGetObjectHandle(clientID,QUAD_TARGET,vrep.simx_opmode_oneshot_wait)
-        ret=setRobotPosition(clientID,Quadricopter,(-1.85,0.10,0.7550))
-        ret,Quadricopter=vrep.simxGetObjectHandle(clientID,QUAD_TARGET1,vrep.simx_opmode_oneshot_wait)
-        ret=setRobotPosition(clientID,Quadricopter,(-1.85,-1.9220,0.7550))
-        ret,Quadricopter=vrep.simxGetObjectHandle(clientID,QUAD_TARGET0,vrep.simx_opmode_oneshot_wait)
-        ret=setRobotPosition(clientID,Quadricopter,(-1.85,2.0687,0.7550))
+#        ret,Quadricopter=vrep.simxGetObjectHandle(clientID,QUAD_TARGET,vrep.simx_opmode_oneshot_wait)
+#        ret=setRobotPosition(clientID,Quadricopter,(-1.85,0.10,1.0550))
+#        ret,Quadricopter=vrep.simxGetObjectHandle(clientID,QUAD_TARGET1,vrep.simx_opmode_oneshot_wait)
+#        ret=setRobotPosition(clientID,Quadricopter,(-1.85,-1.9220,1.0550))
+#        ret,Quadricopter=vrep.simxGetObjectHandle(clientID,QUAD_TARGET0,vrep.simx_opmode_oneshot_wait)
+#        ret=setRobotPosition(clientID,Quadricopter,(-1.85,2.0687,1.0550))
         
 #        ret,Quadricopter=vrep.simxGetObjectHandle(clientID,QUAD,vrep.simx_opmode_oneshot_wait)
 #        ret=setRobotPosition(clientID,Quadricopter,(-1.85,0.10,0.7550))
@@ -123,29 +126,29 @@ def vrepEpisodes(no, droneval, attackerval):
             print ("Traversing path for Drone 1")
             ret = traversePath(clientID,path1,QUAD_TARGET,'Drone01',gamedict[droneval[0]])
             
-#        if (ret==0 or ret==1 or ret==True):
-#            print("Path Traversed Successfully")
-#            print("Computing path for Drone 2")
-#            ret,path2= ComputePath(clientID,QUAD_TARGET0,QUAD_GOAL0,QUAD_BODY0)
-#            #print path2
-#            print("Path Computed fot Drone 2")
-#            print ("Traversing path for Drone 2")
-#            if (ret):
-#                ret = traversePath(clientID,path2,QUAD_TARGET0,'Drone02',gamedict[droneval[1]])
-#                
-#        if (ret==0 or ret==1 or ret==True):
-#            print("Path Traversed Successfully")
-#            print("Computing path for Drone 3")
-#            ret,path3= ComputePath(clientID,QUAD_TARGET1,QUAD_GOAL1,QUAD_BODY1)
-#            print("Path Computed fot Drone 3")
-#            print ("Traversing path for Drone 3")
-#            if (ret):
-#                ret = traversePath(clientID,path3,QUAD_TARGET1,'Drone03',gamedict[droneval[2]])
+        if (ret==0 or ret==1 or ret==True):
+            print("Path Traversed Successfully")
+            print("Computing path for Drone 2")
+            ret,path2= ComputePath(clientID,QUAD_TARGET0,QUAD_GOAL0,QUAD_BODY0)
+            #print path2
+            print("Path Computed fot Drone 2")
+            print ("Traversing path for Drone 2")
+            if (ret):
+                ret = traversePath(clientID,path2,QUAD_TARGET0,'Drone02',gamedict[droneval[1]])
+                
+        if (ret==0 or ret==1 or ret==True):
+            print("Path Traversed Successfully")
+            print("Computing path for Drone 3")
+            ret,path3= ComputePath(clientID,QUAD_TARGET1,QUAD_GOAL1,QUAD_BODY1)
+            print("Path Computed fot Drone 3")
+            print ("Traversing path for Drone 3")
+            if (ret):
+                ret = traversePath(clientID,path3,QUAD_TARGET1,'Drone03',gamedict[droneval[2]])
     #    for i in range(3):
     #        if(i ==0):
     #            
-        if(ret==0 or ret==1 or ret == True):
-            attackerGame(clientID,gamedict[attackerval[0]])
+#        if(ret==0 or ret==1 or ret == True):
+#            attackerGame(clientID,gamedict[attackerval[0]])
         print ret
         
     #        if(i ==0):
