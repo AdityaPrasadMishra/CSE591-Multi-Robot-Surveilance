@@ -5,3 +5,5 @@ This package has code for:
 + VREP code for generating scenario with five building and three surveillance robots (quadcopter drones).
 
 + Generating Problem Instance files with building parameters (form VREP specification), utility values, and alpha parameters mentions in the report (yet to be publicly released).
+
++ Game Theoretic solvers for computing movement strategy.
